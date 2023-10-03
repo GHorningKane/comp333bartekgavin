@@ -16,3 +16,15 @@
   line-height: 30px;
   font-size: 16px;
   }
+
+
+.SwagDivRed{
+  /* border: 5px  red; */
+  background-color: salmon;
+  text-align: center;
+}
+.SwagDivBlue{
+  /* border: 5px  red; */
+  background-color: lightblue;
+  text-align: center;
+}
