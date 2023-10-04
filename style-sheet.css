@@ -1,7 +1,7 @@
 
 /* Purple styling call! */
 #purple {
-  background-color: purple;
+  background-color: rgb(197, 106, 197);  
 }
 
 /* code for flex container */
@@ -63,11 +63,11 @@
 
 /* adds colors to links to match their theme */
 #spotify a {
-  color: green;
+  color: black;
 }
 
 #apple a {
-  color: red;
+  color: black;
 }
 
 #soundcloud a {
