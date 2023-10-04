@@ -10,7 +10,7 @@
   
   .flex-container > div {
     background-color: #f1f1f1;
-  width: 360px;
+  width: 275px;
   margin: 12px;
   text-align: center;
   line-height: 30px;
@@ -25,7 +25,7 @@
 
   .flex-container2 > div {
     background-color: orange;
-  width: 360px;
+  width: 310px;
   margin: 12px;
   text-align: center;
   line-height: 30px;
