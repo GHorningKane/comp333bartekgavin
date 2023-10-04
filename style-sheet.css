@@ -1,0 +1,46 @@
+
+/* code for flex container */
+
+
+  .flex-container {         
+    display: flex;
+    flex-wrap: wrap;
+    background-color: DodgerBlue;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+  width: 360px;
+  margin: 12px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  }
+
+  .flex-container2 {         
+    display: flex;
+    flex-wrap: wrap;
+    background-color: olivedrab;
+  }
+
+  .flex-container2 > div {
+    background-color: orange;
+  width: 360px;
+  margin: 12px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  }
+  
+
+
+.SwagDivRed{
+  /* border: 5px  red; */
+  background-color: salmon;
+  text-align: center;
+}
+.SwagDivBlue{
+  /* border: 5px  red; */
+  background-color: lightblue;
+  text-align: center;
+}
