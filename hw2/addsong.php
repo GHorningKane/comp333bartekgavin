@@ -9,12 +9,16 @@ $rating = $_POST['rating'];
 
 $sql = "INSERT INTO `ratings`  VALUES ('0', '$username', '$artist', '$song', '$rating')";
 
-$rs = mysqli_query($con, $sql);
+$result = mysqli_query($con, $sql);
 
-if($rs)
+if($result)
 {
 	echo "Contact Records Inserted";
+	header("location: reviewboard.php");
+	exit();
 }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -26,4 +30,3 @@ if($rs)
 
 <p> <input type="submit" name="You're welcome! Take me back to the music board" id="Submit" value="Submit"> </p>		</form>		</body>
 </html>
-
