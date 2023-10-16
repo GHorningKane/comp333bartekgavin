@@ -38,11 +38,11 @@ $rating = $_POST['rating'];
 				if($result)
 				{
 					echo "Contact Records Inserted";
-					header("location: reviewboard.php");
-					exit();
+					// header("location: reviewboard.php");
+					// exit();
 				}
             } else{               
-                $input_error = "You've already input this song our system! Try editing it, or deleting it and then posting it again."; echo $input_error;   
+                $input_error = "You've already input this song into our system! Try editing it, or deleting it and then posting it again."; echo $input_error;   
                             }
         } else{
             echo "Uh oh, it seems sql wasn't able to execute the statement? Perhaps try again.";
@@ -50,8 +50,6 @@ $rating = $_POST['rating'];
     }
     mysqli_stmt_close($stmt);
 }
-
-
 
 ?>
 <!DOCTYPE html>
