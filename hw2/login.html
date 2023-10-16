@@ -1,0 +1,28 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <!-- This is the default encoding type for the HTML Form post submission. 
+  Encoding type tells the browser how the form data should be encoded before 
+  sending the form data to the server. 
+  https://www.logicbig.com/quick-info/http/application_x-www-form-urlencoded.html -->
+  <meta http-equiv="Content-Type" content="application/x-www-form-urlencoded"/>
+  <title>Sample Submission Form</title>
+</head>
+
+<body>
+
+  <!-- 
+    HTML code for the form by which the user can query data.
+    Note that we are using names (to pass values around in PHP) and not ids
+    (which are for CSS styling or JavaScript functionality).
+    You can leave the action in the form open 
+    (https://stackoverflow.com/questions/1131781/is-it-a-good-practice-to-use-an-empty-url-for-a-html-forms-action-attribute-a)
+  -->
+  <form method="GET" action="login.php">
+    Username: <input type="text" name="username" placeholder="Your username" /><br>
+    Password: <input type="password" name="password" placeholder="Enter your password" /><br>
+    <input type="submit" name="submit" value="Submit"/>
+    </form>
+  </body>
+  </html>
