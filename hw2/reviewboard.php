@@ -52,4 +52,12 @@ $connection -> close();
 <form name="frmContact" method="post" action="deletesong.php">
 
 <p> <input type="submit" name="redirect_button" id="Submit" value="Delete an existing song"> </p>		</form>		</body>
+
+<!-- <legend>		<p>HTML for logout</p>	</legend> -->
+<body> 		
+    <!-- <legend>		<p>Would you like to add a new song?</p>	</legend> -->
+<form name="frmContact" method="post" action="logout.php">
+
+<p> <input type="submit" name="redirect_button" id="Submit" value="Click Here to Logout!"> </p>		</form>		</body>
+
 </html>
