@@ -30,52 +30,47 @@
     // they are always accessible, regardless of scope - and you can access them 
     // from any function, class or file without having to do anything special.
     // https://www.w3schools.com/PHP/php_superglobals.asp
-    if(isset($_REQUEST["submit"])){
+    if (isset($_REQUEST["submit"])) {
       // Variables for the output and the web form below.
       $out_value = "";
       $username = $_REQUEST['username'];
       $password = $_REQUEST['password'];
-
-      // The following is the core part of this script where we connect PHP
-      // and SQL.
+  
       // Check that the user entered data in the form.
-      if(!empty($username) && !empty($username)){
-        // If so, prepare SQL query with the data to query the database.
-
-        $sql_query = "SELECT * FROM users WHERE username = ('$username')";
-
-        // Send the query and obtain the result.
-        // mysqli_query performs a query against the database.
-        $result = mysqli_query($connection, $sql_query);
-
-
-        // mysqli_fetch_assoc returns an associative array that corresponds to the 
-        // fetched row or NULL if there are no more rows.
-        // It does not make much of a difference here, but, e.g., if there are
-        // multiple rows returned, you can iterate over those with a loop.
-        $row = mysqli_fetch_assoc($result);
-        
-        // if(mysqli_stmt_num_rows($row) == 0){
-        if ($result->num_rows === 0){
-          echo "username doesn't exist :/";
-        }else{
-          if(password_verify($password, $row['password'])){
-            session_start();
-            echo('PHPSESSID: ' . session_id($_GET['session_id']));
-            $_SESSION['username']   = $username;
-            $_SESSION["loggedin"] = true;
-            header ("location: reviewboard.php");
+      if (!empty($username) && !empty($password)) {
+          // Create a prepared statement to select data using parameters.
+          $sql_query = "SELECT * FROM users WHERE username = ?";
+          $stmt = $connection->prepare($sql_query);
+  
+          // Bind the parameter and execute the statement.
+          $stmt->bind_param("s", $username);
+          $stmt->execute();
+  
+          // Get the result and fetch the data.
+          $result = $stmt->get_result();
+          $row = $result->fetch_assoc();
+  
+          if (!$row) {
+              echo "Username doesn't exist :/";
+          } else {
+              if (password_verify($password, $row['password'])) {
+                  session_start();
+                  echo('PHPSESSID: ' . session_id($_GET['session_id']));
+                  $_SESSION['username'] = $username;
+                  $_SESSION["loggedin"] = true;
+                  header("location: reviewboard.php");
+              } else {
+                  $error = "Passwords do not match :/";
+                  echo $error;
+              }
           }
-          else {
-            $error = "Passwords do not match :/";
-            echo $error ;
-          }
-    }
+  
+          // Close the prepared statement.
+          $stmt->close();
+      }
+  
+      // Close SQL connection.
+      $connection->close();
   }
-
-    // Close SQL connection.
-    $connection->close();
-  }
-  ?>
 
 
