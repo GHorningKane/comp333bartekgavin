@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-echo 'Greetings! Welcome to the music review board! :D <br \> <br \>';
-// echo ('Currently logged in as: ' . session_id($_GET['username']) . '<br \>');
+echo 'Greetings ' . $_SESSION['username'] . '! Welcome to the music review board! :D <br \> <br \>';
 echo ('Currently logged in as: ' . $_SESSION['username'] . '<br \>');
 echo ('<br \>');
 

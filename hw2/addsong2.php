@@ -4,8 +4,7 @@ require_once "config.php";
 
 session_start();
 echo 'Greetings ' . $_SESSION['username'] . '! If you see this page for more than a few seconds, it means an error has occured >_>. Below should hopefully a statement indicating the nature of the error. <br \> <br \>';
-// echo ('Currently logged in as: ' . session_id($_GET['username']) . '<br \>');
-// echo ('Currently logged in as: ' . $_SESSION['username'] . '<br \>');
+echo ('Currently logged in as: ' . $_SESSION['username'] . '<br \>');
 echo ('<br \><br \>');
 
 $con = mysqli_connect("localhost","root","","music_db");
