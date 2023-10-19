@@ -28,19 +28,19 @@ Work split was even :). We did have a lot of issues with github version control 
 <img width="1439" alt="image" src="https://github.com/GHorningKane/comp333ianbartekgavin/assets/140963707/ba0f812b-084c-4804-ae65-73a1fd0ef2e1">
 
 # User can only rate once:
-The same user does not have the ability to enter the same entry twice without seeing this error
+The same user does not have the ability to enter the same entry twice without seeing this error:
 
 # Users must have a login, no duplicate users are allowed, and users stay logged in:
-In the instance someone attempts to sign up with a duplicate user they are met with this error
+In the instance someone attempts to sign up with a duplicate user they are met with this error:
 
 # The registration asks for users to enter their passwords twice to ensure correctness:
 <img width="374" alt="image" src="https://github.com/GHorningKane/comp333ianbartekgavin/assets/140963707/ff28296b-8631-45e6-bbc6-bfc047e3a3b2">
 
 # If a user requests the registration page, they are redirected to the list of rated songs:
 
-# At the top of each page the current user is displayed:
+# At the top of each page the current user is displayed and concurrently, all ratings are visable for all, but only interractable for those who created the rating:
+![Alt text](image-4.png)
 
-# All ratings are visable for all, but only interractable for those who created the rating:
 
 # Updating/Deleting/Canceling brings one back to the list of ratings:
 This is hard to prove with a simple screenshot, but this is most certainly implemented as shown through this code and its comments...
@@ -51,15 +51,21 @@ This is hard to prove with a simple screenshot, but this is most certainly imple
 
 
 # Via the frontend requisites are present:
-Users cannot leave fields blank:
-Users cannot make a password smaller than 10 characters long:
-Users cannot rate with more than one integer:
+Users cannot leave fields blank, and users cannot make a password smaller than 10 characters long:
+![Alt text](image-3.png)
+
+# Users cannot rate with more than one integer:
+Attempt at breaking rule:
+![Alt text](image-5.png)
+Returned error:
+![Alt text](image-6.png)
+
 
 # SQL Querries are parameterized to avoid injections attacks:
 
 # Passwords are hashed:
 
-Our Work was split evenly once again!
+# Our Work was split evenly once again!
 
 
 
