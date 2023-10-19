@@ -117,3 +117,11 @@
   background-color: lightblue;
   text-align: center;
 }
+
+table { border-collapse: collapse; }
+tr { border: solid; }
+td { 
+  border: solid; 
+  padding-left: 5px;
+  padding-right: 5px;
+}

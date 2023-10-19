@@ -1,22 +1,18 @@
 <?php
+
+    //establish connection
     require_once "config.php";
 
-
-    $connection = new mysqli($servername, $usernamedb, $passworddb, $dbname);
-    $error = "";
-
-    if ($connection->connect_error) {
+    //check conn
+    if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
     
-    // need help on making this function properly!!!
     $rating = trim($_POST['rating']);
-    // $rating = $_POST['rating'];
-    // echo gettype($rating) . "<br>";
-    if ($rating < 1 || $rating > 5) { 
-        $input_error = "Rating must be in the range of 0 < x < 5 <br>"; 
-        echo $input_error;
-    } else {
+
+    if ($rating < 1 || $rating > 5) {   //if input not in expected range, error
+        echo  "Rating must be in the range of 0 < x < 5 <br>"; 
+    } else {        //else
         if (isset($_REQUEST["submit"])) {
             $out_value = "";
             $id = $_REQUEST['id'];
@@ -25,31 +21,24 @@
             $song = $_REQUEST['song'];
             $rating = $_REQUEST['rating'];
       
-            echo $id;
-            echo $username;
-            echo $artist;
-            echo $song;
-            echo $rating;
-      
-          $sql = "UPDATE ratings SET artist=?, song=?, rating=? WHERE id=?";
-          if($stmt = mysqli_prepare($connection, $sql)){
-              echo"here";
+
+          $sql = "UPDATE ratings SET artist=?, song=?, rating=? WHERE id=?";        //else update that row with a parameterized query.
+          if($stmt = mysqli_prepare($conn, $sql)){
               mysqli_stmt_bind_param($stmt, "ssii", $artist, $song, $rating, $id);
-              // echo"here1.5";
               if(mysqli_stmt_execute($stmt)){
-                  // echo"here1";
-                  // return to reviewboard after updating!
                   header("location: reviewboard.php");
               } else{
-                  // echo"here2";
                   echo "Uh oh, it seems there was a failure, Please debug me";
               }
           }
-          mysqli_stmt_close($stmt);
-      
+        //   mysqli_stmt_close($stmt);
           }
     }
-    
-    $connection->close();
+    $conn->close();
 ?>
+
+<html>
+<a href = reviewboard.php target="_new" id = "shmerp"> Oops, take me back to the reviewboard</a> <br>
+
+</html>
 

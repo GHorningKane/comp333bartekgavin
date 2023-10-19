@@ -3,19 +3,15 @@
 <head> <title> Review a song!</title> </head>
 
 <?php
+//welcome user to page, display logged in user
 session_start();
 echo 'Greetings ' . $_SESSION['username'] . '! Tell us about the song you would like to review! :D <br \> <br \>';
-// echo ('Currently logged in as: ' . session_id($_GET['username']) . '<br \>');
 echo ('Currently logged in as: ' . $_SESSION['username'] . '<br \>');
 echo ('<br \><br \>');
 ?>
 
 <body>
-<!-- <legend><h2>Tell us about the song you'd like to add :)</h2></legend> -->
 <form name="frmContact" method="post" action="addsong2.php">
-<!-- 
-<p> <label for="Name">Username </label>
-<input type="text" name="username" id="username"  placeholder="Username"> </p> -->
 
 <!--Input fields for user to enter information-->
 <p> <label for="Artist">Artist</label>
