@@ -14,6 +14,7 @@ is the link to our website from the repo, otherwise download the repo, and open 
 Work split was even :). We did have a lot of issues with github version control though haha, we got it worked out in the end.
 
 # HW2 Readme Section
+To start navigating one must go to 'index.php'
 
 # Setting Up Development Environment: 
 
