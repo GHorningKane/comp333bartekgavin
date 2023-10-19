@@ -29,9 +29,13 @@ Work split was even :). We did have a lot of issues with github version control 
 
 # User can only rate once:
 The same user does not have the ability to enter the same entry twice without seeing this error:
+![Alt text](image-7.png)
+
 
 # Users must have a login, no duplicate users are allowed, and users stay logged in:
 In the instance someone attempts to sign up with a duplicate user they are met with this error:
+![Alt text](image-8.png)
+
 
 # The registration asks for users to enter their passwords twice to ensure correctness:
 <img width="374" alt="image" src="https://github.com/GHorningKane/comp333ianbartekgavin/assets/140963707/ff28296b-8631-45e6-bbc6-bfc047e3a3b2">
@@ -60,6 +64,10 @@ Attempt at breaking rule:
 Returned error:
 ![Alt text](image-6.png)
 
+Alternative Attempt:
+![Alt text](image-9.png)
+Error:
+![Alt text](image-10.png)
 
 # SQL Querries are parameterized to avoid injections attacks:
 
