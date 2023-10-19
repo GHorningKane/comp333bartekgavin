@@ -17,6 +17,7 @@ echo ('<br \><br \>');
 <p> <label for="Name">Username </label>
 <input type="text" name="username" id="username"  placeholder="Username"> </p> -->
 
+<!--Input fields for user to enter information-->
 <p> <label for="Artist">Artist</label>
 <input type="text" name="artist" id="artist" placeholder="Artist name"> </p>
 
@@ -26,7 +27,7 @@ echo ('<br \><br \>');
 <p> <label for="Rating">Rating</label>
 <textarea name="rating" id="rating" placeholder = "Number 1-5"></textarea> </p>
 
-
+<!--to send to other addsong2 code-->
 <p>
 <input type="submit" name="Submit" id="Submit" value="Submit">
 </p>
