@@ -8,7 +8,6 @@ echo 'Greetings ' . $_SESSION['username'] . '! If you see this page for more tha
 // echo ('Currently logged in as: ' . $_SESSION['username'] . '<br \>');
 echo ('<br \><br \>');
 
-$con = mysqli_connect("localhost","root","","music_db");
 
 $username = $_SESSION['username'];
 $artist = $_POST['artist'];
@@ -29,17 +28,22 @@ $rating = $_POST['rating'];
 {
     $sql = "SELECT * FROM ratings WHERE username = '$username' AND artist = '$artist' AND song = '$song'";
     if($stmt = mysqli_prepare($conn, $sql)){
+        echo "not wokring" ;
         if(mysqli_stmt_execute($stmt)){
+            echo "2";
             mysqli_stmt_store_result($stmt);
             if(mysqli_stmt_num_rows($stmt) == 0){
 				$sql = "INSERT INTO `ratings`  VALUES ('0', '$username', '$artist', '$song', '$rating')";
-				$result = mysqli_query($conn, $sql);
+                $result = mysqli_query($conn, $sql);
+                
 				
 				if($result)
 				{
+                    echo "4"; ////////////
 					echo "Contact Records Inserted";
-					// header("location: reviewboard.php");
-					// exit();
+                    echo "changes won't go live";
+					header("location: reviewboard.php");
+					exit();
 				}
             } else{               
                 $input_error = "You've already input this song into our system! Try editing it, or deleting it and then posting it again."; echo $input_error;   
@@ -48,6 +52,7 @@ $rating = $_POST['rating'];
             echo "Uh oh, it seems sql wasn't able to execute the statement? Perhaps try again.";
         }
     }
+    echo "wtf not work sad";
     mysqli_stmt_close($stmt);
 }
 
