@@ -12,18 +12,6 @@ $conn = mysqli_connect('localhost', 'root', '', 'music_db');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-
-// update line to be edited to include specific ID of which is being edited
-// $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-
-// if ($conn->query($sql) === TRUE) {
-//     echo "Record updated successfully";
-//     sleep(6);
-//     header("Location: reviewboard.php")
-//     // need  a REDIRECT TO ANOTHER PAGE HERE or maybe not???
-//   } else {
-//     echo "Error updating record: " . $conn->error;
-//   }
   
 $conn->close();
 ?>
@@ -33,8 +21,8 @@ $conn->close();
     <title> Editing! </title>	 
 </head>
 <body> 		
-    <!-- <legend>		<p>HTML button for returning to ratings list before/after update </p>	</legend> -->
-    <!-- <legend>		<p>Click here to cancel the update, or to simply return to the ratings page!</p>	</legend> -->
+
+<!-- form to write in new information for song when update goes through -->
 
 <form name="editSongForm" method="POST" action="editsongpost.php">
     <table>
@@ -43,7 +31,7 @@ $conn->close();
         <?php
         $id = $_GET['id'];
         $connection = mysqli_connect('localhost', 'root', '', 'music_db');
-        $query = "SELECT * FROM ratings WHERE id=$id";  // TODO: make this paramaterized to avoid SQL injection attacks pls
+        $query = "SELECT * FROM ratings WHERE id=$id"; 
         $result = mysqli_query($connection, $query);
         $row = mysqli_fetch_array($result);
         echo"<tr><td>Username: </td><td>".htmlspecialchars($row['username'])."</td></tr>";
@@ -58,7 +46,8 @@ $conn->close();
     <input type="submit" name="submit" value="Submit"/>
 </form>
 	
-<!-- <legend>		<p>Return to ratings page?</p>	</legend> -->
+
+<!-- Return to ratings page i.e. cancel update -->
 <form name="frmContact" method="get" action="reviewboard.php">   
 <p> 
     <input type="submit" name="redirect_button" id="Submit" value="Click here to cancel the update, or to simply return to the ratings page!"> 

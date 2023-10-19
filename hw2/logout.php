@@ -12,15 +12,13 @@ if (ini_get("session.use_cookies")) {
     );
 }
 // Finally, destroy the session.
-session_destroy();
+// session_destroy();
 ?>
 <html>
 
 <head> 	 The Logout was Successful!	 </head>
 
-<!-- <legend>		<p>HTML for logout</p>	</legend> -->
 <body> 		
-    <!-- <legend>		<p>Would you like to add a new song?</p>	</legend> -->
 <form name="frmContact" method="post" action="login.html">
 
 <p> <input type="submit" name="redirect_button" id="Submit" value="Click Here to Return Login!"> </p>		</form>		</body>

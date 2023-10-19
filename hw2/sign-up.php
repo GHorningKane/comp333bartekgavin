@@ -12,9 +12,9 @@ if(empty($password)){    $input_error = "Password empty<br>"; echo $input_error;
 if(strlen($password) < 10) { $input_error = "Password must be at least 10 characters long<br>"; echo $input_error;}
 if(!preg_match("/[0-9]/", $password)) {$input_error = "Password must contain at least 1 number<br>"; echo $input_error;}
 if(empty($input_error) && ($password != $password_check)){            $input_error = "Password don't match<br>"; echo $input_error;        }  
-$password = password_hash($password, PASSWORD_DEFAULT);     // have to do this after I compare password and confirm password I guess haha?
+$password = password_hash($password, PASSWORD_DEFAULT);     // have to do this after I compare password and confirm password I guess haha? think there's a betterway later with verify actually lol.
 
-//check username
+//check username non empty
 if(empty($username)){
     $input_error = "Username empty";
     echo $input_error;   
@@ -26,9 +26,8 @@ if(empty($username)){
         if(mysqli_stmt_execute($stmt)){
             mysqli_stmt_store_result($stmt);
             if(mysqli_stmt_num_rows($stmt) == 0){ //username not taken
-                                    $username = $username;
             } else{               
-                $input_error = "Username taken.";   echo $input_error;   
+                echo "Username taken.";   
                             }
         } else{
             echo "Uh oh, it seems sql wasn't able to execute the statement? Perhaps try again.";
