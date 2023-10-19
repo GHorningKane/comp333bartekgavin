@@ -13,13 +13,27 @@ $result = mysqli_query($connection, $query);
 
 echo "<table>"; 
 
+echo "<tr>
+<td><b>Username</b></td>
+<td><b>Artist</b></td>
+<td><b>Song</b></td>
+<td><b>Rating</b></td>
+</tr>";  
+
 while($row = mysqli_fetch_array($result)){   
 echo "<tr>
 <td>" . htmlspecialchars($row['username']) . " </td>
 <td>"     . htmlspecialchars($row['artist']) . "</td>
 <td>"     . htmlspecialchars($row['song']) . "</td>
 <td>"     . htmlspecialchars($row['rating']) . "</td>
-</tr>";  
+"; 
+if($row['username'] == $_SESSION['username']) {
+    echo "
+    <td><a href='editsong.php'>Edit</a></td>
+    <td><a href='deletesong.php'>Delete</a></td> 
+    ";
+}
+echo "</tr>";  
 }
 
 echo "</table>"; 
@@ -32,7 +46,12 @@ $connection -> close();
 ?>
 
 <html>
-<head> 	<title> The Review Board!</title>	 </head>
+<head> 	
+    <title> The Review Board!</title>	 
+    <style>
+        <?php include '../style-sheet.css'; ?>
+    </style>
+</head>
 
 <body> 		
     <!-- <legend>		<p>Would you like to add a new song?</p>	</legend> -->
