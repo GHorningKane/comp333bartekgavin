@@ -1,4 +1,5 @@
 <?php
+
     //establish connection
     require_once "config.php";
 
@@ -20,6 +21,7 @@
             $song = $_REQUEST['song'];
             $rating = $_REQUEST['rating'];
       
+
           $sql = "UPDATE ratings SET artist=?, song=?, rating=? WHERE id=?";        //else update that row with a parameterized query.
           if($stmt = mysqli_prepare($conn, $sql)){
               mysqli_stmt_bind_param($stmt, "ssii", $artist, $song, $rating, $id);
@@ -39,3 +41,4 @@
 <a href = reviewboard.php target="_new" id = "shmerp"> Oops, take me back to the reviewboard</a> <br>
 
 </html>
+

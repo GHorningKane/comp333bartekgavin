@@ -46,6 +46,7 @@ $conn->close();
     <input type="submit" name="submit" value="Submit"/>
 </form>
 	
+
 <!-- Return to ratings page i.e. cancel update -->
 <form name="frmContact" method="get" action="reviewboard.php">   
 <p> 

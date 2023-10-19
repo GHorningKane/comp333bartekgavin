@@ -1,5 +1,4 @@
 <?php
-
 //welcome user to page, display logged in user
 session_start();
 echo 'Greetings ' . $_SESSION['username'] . '! Are you sure you would like to delete the review below? We promise your opinion was not so bad. <br \> <br \>';
@@ -14,12 +13,6 @@ echo ('<br \><br \>');
     }
 
       $id = $_REQUEST['id'];
-
-      echo $id;
-      echo $username;
-      echo $artist;
-      echo $song;
-      echo $rating;
 
     if (isset($_POST['delete'])) {
         // PHP code to be executed when the button is pressed
@@ -36,9 +29,6 @@ echo ('<br \><br \>');
         header("location: reviewboard.php");  //when done, return to review board
     }
     $conn->close();
-
-
-
 
 ?>
 

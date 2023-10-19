@@ -36,6 +36,7 @@ $query = "SELECT * FROM ratings";
 $result = mysqli_query($conn, $query);
 
 echo "<table>"; 
+
 echo "<tr>
 <td><b>ID</b></td>
 <td><b>Username</b></td>
@@ -43,6 +44,7 @@ echo "<tr>
 <td><b>Song</b></td>
 <td><b>Rating</b></td>
 </tr>";  
+
 while($row = mysqli_fetch_array($result)){   
 echo "<tr>
 <td>" . htmlspecialchars($row['id']) . " </td>
@@ -63,4 +65,3 @@ echo "</table>";
 $conn -> close();
 ?>
 
-</html>

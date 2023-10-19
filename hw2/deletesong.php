@@ -5,6 +5,7 @@ include_once "config.php";
 
 //welcome user to page, display logged in user
 session_start();
+
 echo 'Greetings ' . $_SESSION['username'] . '! Are you sure you would like to delete the review below? We promise your opinion was not so bad. <br \> <br \>';
 echo ('Currently logged in as: <b>' . $_SESSION['username'] . '</b><br \>');
 echo ('<br \><br \>');
@@ -39,10 +40,10 @@ if ($conn->connect_error) {
         ?>
 
     </table>
+
     <input type="submit" name="delete" value="Confirm Delete"/>
 </form>
 	
-
 <!-- cancel deletion, return to reviewboard.php -->
 <form name="frmContact" method="get" action="reviewboard.php">   
 <p> 
