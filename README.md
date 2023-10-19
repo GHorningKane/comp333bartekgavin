@@ -43,6 +43,12 @@ In the instance someone attempts to sign up with a duplicate user they are met w
 # All ratings are visable for all, but only interractable for those who created the rating:
 
 # Updating/Deleting/Canceling brings one back to the list of ratings:
+This is hard to prove with a simple screenshot, but this is most certainly implemented as shown through this code and its comments...
+![Alt text](image.png)
+![Alt text](image-1.png)
+![Alt text](image-2.png)
+
+
 
 # Via the frontend requisites are present:
 Users cannot leave fields blank:
