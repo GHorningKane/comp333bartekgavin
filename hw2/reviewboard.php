@@ -14,6 +14,7 @@ $result = mysqli_query($connection, $query);
 echo "<table>"; 
 
 echo "<tr>
+<td><b>ID</b></td>
 <td><b>Username</b></td>
 <td><b>Artist</b></td>
 <td><b>Song</b></td>
@@ -22,6 +23,7 @@ echo "<tr>
 
 while($row = mysqli_fetch_array($result)){   
 echo "<tr>
+<td>" . htmlspecialchars($row['id']) . " </td>
 <td>" . htmlspecialchars($row['username']) . " </td>
 <td>"     . htmlspecialchars($row['artist']) . "</td>
 <td>"     . htmlspecialchars($row['song']) . "</td>
@@ -29,8 +31,8 @@ echo "<tr>
 "; 
 if($row['username'] == $_SESSION['username']) {
     echo "
-    <td><a href='editsong.php'>Edit</a></td>
-    <td><a href='deletesong.php'>Delete</a></td> 
+    <td><a href='editsong.php?id=" . htmlspecialchars($row['id']) . "'>Edit</a></td>
+    <td><a href='deletesong.php?id=" . htmlspecialchars($row['id']) . "'>Delete</a></td> 
     ";
 }
 echo "</tr>";  
