@@ -16,7 +16,7 @@ Work split was even :). We did have a lot of issues with github version control 
 # HW2 Readme Section
 To start navigating one must go to 'index.php'
 
-# Setting Up Development Environment: 
+# Setting Up Development Environment/Production Environment: 
 
 # PHPMyAdmin Initial Image:
 <img width="1440" alt="image" src="https://github.com/GHorningKane/comp333ianbartekgavin/assets/140963707/85b44fac-b479-4385-8077-45267ad70b3d">
@@ -29,6 +29,9 @@ To start navigating one must go to 'index.php'
 <img width="1439" alt="image" src="https://github.com/GHorningKane/comp333ianbartekgavin/assets/140963707/ba0f812b-084c-4804-ae65-73a1fd0ef2e1">
 
 # User Functionality/Features:
+
+# Website Link:
+ xampp.great-site.net
 
 # Users Can Only Rate Once:
 The same user does not have the ability to enter the same entry twice without seeing this error:
